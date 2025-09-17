@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    env_file: .env
+    ports: ["5033:5033"]
+    depends_on: ["mongo"]
+mongo:
+  image: mongo:7
+  container_name: learncompass-mongo
+  ports: ["27017:27017"]
+  volumes:
+    - mongo_data:/data/db
+mailhog:
+  image: mailhog/mailhog:latest
+  ports: ["8025:8025"]
+  volumes:
+    - mailhog_data:/data
+volumes:
+  mongo_data:
+  mailhog_data:

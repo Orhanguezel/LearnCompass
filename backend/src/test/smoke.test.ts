@@ -1,0 +1,1 @@
+// TODO: vitest/jest eklenecek. İlk smoke: /healthz 200, POST /events 201.
